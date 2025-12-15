@@ -1,303 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Las Nubes Saben™</title>
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --color-text-dark: #000000;
-            --color-text-light: #000000;
-            --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --border-radius-lg: 18px;
-            --card-background-color: rgba(255, 255, 255, 0.9);
-        }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Las Nubes Saben™</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-text-dark: #000000;
+            --color-text-light: #000000;
+            --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --border-radius-lg: 18px;
+            --card-background-color: rgba(255, 255, 255, 0.9);
+        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        body {
-            font-family: 'DM Sans', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-            background: 
-                radial-gradient(circle at 25% 55%, rgba(210, 180, 255, 0.9) 0%, transparent 60%),
-                radial-gradient(circle at 75% 45%, rgba(120, 230, 180, 0.9) 0%, transparent 60%),
-                radial-gradient(circle at 50% 15%, rgba(255, 235, 59, 0.7) 0%, transparent 60%),
-                radial-gradient(circle at 85% 85%, rgba(255, 128, 171, 0.2) 0%, transparent 60%),
-                radial-gradient(circle at 15% 70%, rgba(255, 179, 161, 0.8) 0%, transparent 60%),
-                radial-gradient(circle at 40% 90%, rgba(255, 99, 71, 0.8) 0%, transparent 60%);
-            background-size: 350% 350%;
-            animation: moveGradient 12s ease-in-out infinite;
-            perspective: 1000px;
-        }
-        
-        @keyframes moveGradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            background: 
+                radial-gradient(circle at 25% 55%, rgba(210, 180, 255, 0.9) 0%, transparent 60%),
+                radial-gradient(circle at 75% 45%, rgba(120, 230, 180, 0.9) 0%, transparent 60%),
+                radial-gradient(circle at 50% 15%, rgba(255, 235, 59, 0.7) 0%, transparent 60%),
+                radial-gradient(circle at 85% 85%, rgba(255, 128, 171, 0.2) 0%, transparent 60%),
+                radial-gradient(circle at 15% 70%, rgba(255, 179, 161, 0.8) 0%, transparent 60%),
+                radial-gradient(circle at 40% 90%, rgba(255, 99, 71, 0.8) 0%, transparent 60%);
+            background-size: 350% 350%;
+            animation: moveGradient 12s ease-in-out infinite;
+            perspective: 1000px;
+        }
+        
+        @keyframes moveGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-        .card-container {
-            position: relative;
-            width: 90%;
-            max-width: 600px;
-            min-height: 250px;
-            transform-style: preserve-3d;
-            transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            /* Añadido para indicar que es clickeable */
-            cursor: pointer; 
-        }
+        .card-container {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            min-height: 250px;
+            transform-style: preserve-3d;
+            transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            /* Añadido para indicar que es clickeable */
+            cursor: pointer; 
+        }
 
-        .card-container.flipped {
-            transform: rotateY(-180deg);
-        }
+        .card-container.flipped {
+            transform: rotateY(-180deg);
+        }
 
-        .card {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: var(--border-radius-lg);
-            background-color: var(--card-background-color);
-            box-shadow: var(--shadow-subtle);
-            backface-visibility: hidden;
-            padding: 2.5rem 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            justify-content: center;
-        }
+        .card {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: var(--border-radius-lg);
+            background-color: var(--card-background-color);
+            box-shadow: var(--shadow-subtle);
+            backface-visibility: hidden;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            justify-content: center;
+        }
 
-        .card.front {
-            z-index: 2;
-            align-items: center;
-            text-align: center;
-        }
+        .card.front {
+            z-index: 2;
+            align-items: center;
+            text-align: center;
+        }
 
-        .card.back {
-            transform: rotateY(180deg);
-            z-index: 1;
-            align-items: flex-start;
-            text-align: left;
-        }
+        .card.back {
+            transform: rotateY(180deg);
+            z-index: 1;
+            align-items: flex-start;
+            text-align: left;
+        }
 
-        .mensaje-header {
-            display: flex;
-            align-items: center;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--color-text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+        .mensaje-header {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
-        .mensaje-header .emoji-cloud {
-            margin-left: 8px;
-            font-size: 1.2rem;
-            animation: flotar 3s ease-in-out infinite;
-        }
+        .mensaje-header .emoji-cloud {
+            margin-left: 8px;
+            font-size: 1.2rem;
+            animation: flotar 3s ease-in-out infinite;
+        }
 
-        .mensaje-principal {
-            font-size: 1.55rem;
-            font-weight: 700;
-            line-height: 1.3;
-            color: var(--color-text-dark);
-            /* Reducimos el espacio de arriba */
-            margin-top: 0.5rem; 
-            text-align: left;
-        }
+        .mensaje-principal {
+            font-size: 1.55rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--color-text-dark);
+            /* Reducimos el espacio de arriba */
+            margin-top: 0.5rem; 
+            text-align: left;
+        }
 
-        .mensaje-secundario {
-            font-size: 0.95rem;
-            font-weight: 400;
-            color: var(--color-text-light);
-            margin-top: 0.5rem;
-            text-align: left;
-        }
+        .mensaje-secundario {
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--color-text-light);
+            margin-top: 0.5rem;
+            text-align: left;
+        }
 
-        .title-no-spacing {
-            line-height: 1; 
-        }
+        .title-no-spacing {
+            line-height: 1; 
+        }
 
-        @keyframes flotar {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
 
-        @media (max-width: 768px) {
-            .mensaje-principal {
-                font-size: 1.25rem;
-            }
-            .mensaje-secundario {
-                font-size: 0.9rem;
-            }
-            .mensaje-header {
-                font-size: 0.8rem;
-            }
-        }
-    </style>
+        @media (max-width: 768px) {
+            .mensaje-principal {
+                font-size: 1.25rem;
+            }
+            .mensaje-secundario {
+                font-size: 0.9rem;
+            }
+            .mensaje-header {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="card-container" id="cardContainer">
-        <div class="card front">
-            <h1 class="title-no-spacing" style="font-size: 2rem;">Las Nubes Saben™</h1>
-            
-        </div>
-        <div class="card back">
-            <div class="mensaje-header">
-                MESSAGE FROM YOUR CLOUD <span class="emoji-cloud">☁️</span>
-                </div>
-            <p class="mensaje-principal" id="mensajePrincipal"></p>
-            <p class="mensaje-secundario">If you want another message, go near the cloud again.
-                </p>
-        </div>
-    </div>
+    <div class="card-container" id="cardContainer">
+        <div class="card front">
+            <h1 class="title-no-spacing" style="font-size: 2rem;">Las Nubes Saben™</h1>
+        </div>
+        <div class="card back">
+            <div class="mensaje-header">
+                MESSAGE FROM YOUR CLOUD <span class="emoji-cloud">☁️</span>
+                </div>
+            <p class="mensaje-principal" id="mensajePrincipal"></p>
+            <p class="mensaje-secundario">If you want another message, go near the cloud again.
+                </p>
+        </div>
+    </div>
 
-    <script>
-        const mensajes = [
-            "Go with the flow of life.",
-            "Contemplate the moment: everything is here and now.",
-            "Only those who make mistakes learn — and you know it.",
-            "Silence offers deep answers.",
-            "Don’t be afraid to leave the old behind so the new can be born.",
-            "Take your time. Live it without rushing.",
-            "The answer will come when you calm your mind.",
-            "Don’t carry the past as a burden; take its lesson.",
-            "You’ll find your answer when you quiet your mind.",
-            "Trust the magic of every beginning.",
-            "Choose again whenever you need to.",
-            "Be patient. Everything happens in its own time.",
-            "Enjoy everything that happens to you — can you see it?",
-            "Don’t be afraid to change direction.",
-            "Listen to your inner voice; it doesn’t get it wrong. What is it telling you?",
-            "Be grateful in every circumstance.",
-            "The Cloud can’t help you this time.",
-            "This page gives you a big, bright, neon green light.",
-            "You should know there are no limits to what you want.",
-            "Today is a good day to start again.",
-            "Dare to ask the universe exactly what you dream of.",
-            "Today is a good day to start again.",
-            "Follow your intuition. You already know what to do.",
-            "Change begins with a small step. Why not take it today?",
-            "Magic happens when you let go of control. LET IT GO.",
-            "Take the leap — the universe has your back. What are you waiting for?",
-            "You need to let go of what no longer vibrates with you.",
-            "Watch your words; they are creating your world.",
-            "I invite you to take a deep breath.",
-            "You are braver than you imagine.",
-            "If something unsettles you, observe it without judgment. What is it?",
-            "The future called — it says you can stop procrastinating now.",
-            "The universe doesn’t respond to your effort, it responds to your vibration. Do less. Feel more.",
-            "Your block isn’t mental, it’s energetic. Your body doesn’t feel safe yet.",
-            "What excuse do you use the most? Think about it.",
-            "Behind every excuse there’s an identity that doesn’t want to die.",
-            "Today the Cloud asks you: are you really moving forward, or just going in circles?",
-            "You’re closer than you think. Keep going.",
-            "Today is a good day to move forward lightly.",
-            "Don’t underestimate the power of a small movement. Move.",
-            "You’re making excuses.",
-            "Treat yourself well… Eat well.", // Corregido el punto suspensivo
-            "Stop comparing yourself to others.",
-            "Gift it or gift yourself! Your next purchase at www.lasnubes.com gets 10% off. Use code NUBE10.", // Corregido la puntuación y sintaxis
-            "That feeling you have is right.",
-            "Turn off your phone and give yourself a break from social media.",
-            "The Cloud detects laughs pending in your schedule.",
-            "Soon you’ll be celebrating something important to you.",
-            "This time, keep your ideas and plans to yourself.",
-            "Everything is going to work out: the universe is preparing the path for you.",
-            "Yes, yes. YES, YES, YES…!",
-            "Close your eyes and visualize what life will be like when everything you desire becomes real.",
-            "If it doesn’t feel right, then the answer is no.",
-            "The Cloud suggests you change your routine to trigger big shifts.",
-            "The Cloud says: don’t overthink it.",
-            "Oracular affirmation: everything I create from love expands.",
-            "Today, take the step that’s been asking to be taken for a while.",
-            "Today the Cloud wants to play with you… hehe.", // Corregido el punto suspensivo
-            "Your comfort zone has mold on it.",
-            "Your 'I’ll do it tomorrow' is today.", // Corregido el uso de comillas
-            "The Cloud tells you with certainty: you’re closer than you think.",
-            "The Cloud detects that you’re already vibrating differently.",
-            "The Cloud detects a powerful decision waiting to be made.",
-            "Today, focus on what you have — not on what you lack.",
-            "What if you tried smiling before something happens?",
-            "The Cloud detects that you need a hug… here it is ☁️",
-            "The Cloud insists: your crazy ideas are the best ones.",
-            "Even the skies have sales! Get 10% off at www.lasnubes.com. Use code NUBE10 and see for yourself!", // Corregido: Claridad del código
-            "How about dancing for five minutes for no reason?",
-            "The joy I cultivate multiplies in my life. Repeat it x5.",
-            "The Cloud drops a spoiler: it’s going to work out.",
-            "The Cloud whispers: let go of what feels heavy.",
-            "The Cloud insists: your excuses already smell burnt.",
-            "What if you tried being grateful even for the weird stuff?",
-            "Give your perfectionism a vacation.",
-            "Your intuition whispers: do it.",
-            "The Cloud asks you: what would you do if you weren’t afraid?",
-            "Today, put on music and turn the volume up.",
-            "Dare to ask for what you truly want.",
-            "The Cloud blows a secret your way: trust yourself more.",
-            "Stop postponing it… you know what.",
-            "You are free to change your mind.",
-            "The Cloud whispers this to you: everything you give comes back to you x10. Get ready to receive.",
-            "There’s something you need to heal.",
-            "Set your boundaries."
-        ];
-        
-        const mensajePrincipalElemento = document.getElementById("mensajePrincipal");
-        const cardContainer = document.getElementById("cardContainer");
-        
-        const capitalizar = (str) => str.charAt(0).toUpperCase() + str.slice(1);
-        
-        let isFlipped = false;
+    <script>
+        const mensajes = [
+            "Go with the flow of life.",
+            "Contemplate the moment: everything is here and now.",
+            "Only those who make mistakes learn — and you know it.",
+            "Silence offers deep answers.",
+            "Don’t be afraid to leave the old behind so the new can be born.",
+            "Take your time. Live it without rushing.",
+            "The answer will come when you calm your mind.",
+            "Don’t carry the past as a burden; take its lesson.",
+            "You’ll find your answer when you quiet your mind.",
+            "Trust the magic of every beginning.",
+            "Choose again whenever you need to.",
+            "Be patient. Everything happens in its own time.",
+            "Enjoy everything that happens to you — can you see it?",
+            "Don’t be afraid to change direction.",
+            "Listen to your inner voice; it doesn’t get it wrong. What is it telling you?",
+            "Be grateful in every circumstance.",
+            "The Cloud can’t help you this time.",
+            "This page gives you a big, bright, neon green light.",
+            "You should know there are no limits to what you want.",
+            "Today is a good day to start again.",
+            "Dare to ask the universe exactly what you dream of.",
+            "Today is a good day to start again.",
+            "Follow your intuition. You already know what to do.",
+            "Change begins with a small step. Why not take it today?",
+            "Magic happens when you let go of control. LET IT GO.",
+            "Take the leap — the universe has your back. What are you waiting for?",
+            "You need to let go of what no longer vibrates with you.",
+            "Watch your words; they are creating your world.",
+            "I invite you to take a deep breath.",
+            "You are braver than you imagine.",
+            "If something unsettles you, observe it without judgment. What is it?",
+            "The future called — it says you can stop procrastinating now.",
+            "The universe doesn’t respond to your effort, it responds to your vibration. Do less. Feel more.",
+            "Your block isn’t mental, it’s energetic. Your body doesn’t feel safe yet.",
+            "What excuse do you use the most? Think about it.",
+            "Behind every excuse there’s an identity that doesn’t want to die.",
+            "Today the Cloud asks you: are you really moving forward, or just going in circles?",
+            "You’re closer than you think. Keep going.",
+            "Today is a good day to move forward lightly.",
+            "Don’t underestimate the power of a small movement. Move.",
+            "You’re making excuses.",
+            "Treat yourself well… Eat well.",
+            "Stop comparing yourself to others.",
+            "Gift it or gift yourself! Your next purchase at www.lasnubes.com gets 10% off. Use code NUBE10.",
+            "That feeling you have is right.",
+            "Turn off your phone and give yourself a break from social media.",
+            "The Cloud detects laughs pending in your schedule.",
+            "Soon you’ll be celebrating something important to you.",
+            "This time, keep your ideas and plans to yourself.",
+            "Everything is going to work out: the universe is preparing the path for you.",
+            "Yes, yes. YES, YES, YES…!",
+            "Close your eyes and visualize what life will be like when everything you desire becomes real.",
+            "If it doesn’t feel right, then the answer is no.",
+            "The Cloud suggests you change your routine to trigger big shifts.",
+            "The Cloud says: don’t overthink it.",
+            "Oracular affirmation: everything I create from love expands.",
+            "Today, take the step that’s been asking to be taken for a while.",
+            "Today the Cloud wants to play with you… hehe.",
+            "Your comfort zone has mold on it.",
+            "Your 'I’ll do it tomorrow' is today.",
+            "The Cloud tells you with certainty: you’re closer than you think.",
+            "The Cloud detects that you’re already vibrating differently.",
+            "The Cloud detects a powerful decision waiting to be made.",
+            "Today, focus on what you have — not on what you lack.",
+            "What if you tried smiling before something happens?",
+            "The Cloud detects that you need a hug… here it is ☁️",
+            "The Cloud insists: your crazy ideas are the best ones.",
+            "Even the skies have sales! Get 10% off at www.lasnubes.com. Use code NUBE10 and see for yourself!",
+            "How about dancing for five minutes for no reason?",
+            "The joy I cultivate multiplies in my life. Repeat it x5.",
+            "The Cloud drops a spoiler: it’s going to work out.",
+            "The Cloud whispers: let go of what feels heavy.",
+            "The Cloud insists: your excuses already smell burnt.",
+            "What if you tried being grateful even for the weird stuff?",
+            "Give your perfectionism a vacation.",
+            "Your intuition whispers: do it.",
+            "The Cloud asks you: what would you do if you weren’t afraid?",
+            "Today, put on music and turn the volume up.",
+            "Dare to ask for what you truly want.",
+            "The Cloud blows a secret your way: trust yourself more.",
+            "Stop postponing it… you know what.",
+            "You are free to change your mind.",
+            "The Cloud whispers this to you: everything you give comes back to you x10. Get ready to receive.",
+            "There’s something you need to heal.",
+            "Set your boundaries."
+        ];
+        
+        const mensajePrincipalElemento = document.getElementById("mensajePrincipal");
+        const cardContainer = document.getElementById("cardContainer");
+        
+        const capitalizar = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+        
+        let isFlipped = false;
 
-        // Función para seleccionar y mostrar un nuevo mensaje
-        const mostrarNuevoMensaje = () => {
-            const mensaje = mensajes[Math.floor(Math.random() * mensajes.length)];
-            // Aplica capitalización y limpieza de puntos duplicados
-            mensajePrincipalElemento.textContent = capitalizar(mensaje.replace('..', '.'));
-        }
+        // Función para seleccionar y mostrar un nuevo mensaje
+        const mostrarNuevoMensaje = () => {
+            const mensaje = mensajes[Math.floor(Math.random() * mensajes.length)];
+            // Aplica capitalización y limpieza de puntos duplicados
+            mensajePrincipalElemento.textContent = capitalizar(mensaje.replace('..', '.'));
+        }
 
-        // 1. Mostrar el primer mensaje y voltear al cargar (como antes)
-        setTimeout(() => {
-            mostrarNuevoMensaje();
-            cardContainer.classList.add('flipped');
-            isFlipped = true;
-        }, 1000);
+        // 1. Mostrar el primer mensaje y voltear al cargar (como antes)
+        setTimeout(() => {
+            mostrarNuevoMensaje();
+            cardContainer.classList.add('flipped');
+            isFlipped = true;
+        }, 1000);
 
-        // 2. Añadir funcionalidad de clic para obtener un nuevo mensaje
-        cardContainer.addEventListener('click', () => {
-            // Si la tarjeta está girada (mostrando el mensaje)
-            if (isFlipped) {
-                // Voltear a la cara principal
-                cardContainer.classList.remove('flipped');
-                isFlipped = false;
-                
-                // Esperar a que se complete la animación de vuelta (1000ms en CSS)
-                // para cargar el nuevo mensaje y voltear de nuevo.
-                setTimeout(() => {
-                    mostrarNuevoMensaje();
-                    cardContainer.classList.add('flipped');
-                    isFlipped = true;
-                }, 500); // 500ms es suficiente para que parezca que se carga al girar
-            } else {
-                // Si está en la cara principal, simplemente voltear a la de atrás
-                mostrarNuevoMensaje();
-                cardContainer.classList.add('flipped');
-                isFlipped = true;
-            }
-        });
-    </script>
+        // 2. Añadir funcionalidad de clic para obtener un nuevo mensaje
+        cardContainer.addEventListener('click', () => {
+            // Si la tarjeta está girada (mostrando el mensaje)
+            if (isFlipped) {
+                // Voltear a la cara principal
+                cardContainer.classList.remove('flipped');
+                isFlipped = false;
+                
+                // Esperar a que se complete la animación de vuelta (1000ms en CSS)
+                // para cargar el nuevo mensaje y voltear de nuevo.
+                setTimeout(() => {
+                    mostrarNuevoMensaje();
+                    cardContainer.classList.add('flipped');
+                    isFlipped = true;
+                }, 500); // 500ms es suficiente para que parezca que se carga al girar
+            } else {
+                // Si está en la cara principal, simplemente voltear a la de atrás
+                mostrarNuevoMensaje();
+                cardContainer.classList.add('flipped');
+                isFlipped = true;
+            }
+        });
+    </script>
 </body>
 </html>
